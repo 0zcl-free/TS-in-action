@@ -1,0 +1,38 @@
+{
+  "name": "vue-employee-query2",
+  "version": "1.0.0",
+  "description": "封装组件",
+  "main": "./dist//employee-query.js",
+  "types": "./types/employee-query.d.ts",
+  "scripts": {
+    "start": "webpack serve --mode=development --config ./build/webpack.dev.js",
+    "build": "webpack --mode=production --config ./build/webpack.pro.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "TypeScript",
+    "Vue"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.1",
+    "fork-ts-checker-webpack-plugin": "^6.0.8",
+    "html-webpack-plugin": "^4.5.1",
+    "ts-loader": "^8.0.13",
+    "typescript": "^4.1.3",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1",
+    "webpack-merge": "^5.7.3",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "dependencies": {
+    "vue": "^2.6.12",
+    "vue-class-component": "^7.2.6",
+    "vue-property-decorator": "^9.1.2"
+  }
+}
