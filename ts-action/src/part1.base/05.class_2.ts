@@ -6,7 +6,7 @@ abstract class Animal2 {
 }
 
 // 抽象类 不能 实例化
-// let animal2 = new Animal2()
+// const animal2 = new Animal2()
 
 class Dog2 extends Animal2 {
   public name: string
@@ -14,25 +14,26 @@ class Dog2 extends Animal2 {
     super()
     this.name = name
   }
-  // 继承抽象类，也需要继承抽象方法
+  // 继承抽象类，也需要实现继承的抽象方法
   sleep() {
     console.log('dog2 sleep..')
   }
 }
 
-let dog2 = new Dog2('朝宇')
+const dog2 = new Dog2('朝宇')
 
 class Cat extends Animal2 {
   sleep() {
       console.log('Cat sleep')
   }
 }
-let cat = new Cat()
+const cat = new Cat()
 
-let animals: Animal2[] = [dog2, cat]
+const animals: Animal2[] = [dog2, cat]
 
 // 多态： 
-// Cat 和 Dog 都继承自 Animal，但是分别实现了自己的 eat 方法。我们无需了解它是 Cat 还是 Dog，就可以直接调用 eat 方法，程序会自动判断出来应该如何执行 eat
+// Cat 和 Dog 都继承自 Animal，但是分别实现了自己的 sleep 方法。
+// 我们无需了解它是 Cat 还是 Dog，就可以直接调用 eat 方法，程序会自动判断出来应该如何执行 sleep
 animals.forEach(item => item.sleep())
 
 class Workflow {

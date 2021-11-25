@@ -1,8 +1,8 @@
 // 类型推断
-let a = 1
-let b = [1, '1', null]
+const a = 1
+const b = [1, '1', null]
 
-let c = (x = 1) => x + 1
+const c = (x = 1) => x + 1
 
 // ??? 无法实现效果：https://www.typescriptlang.org/docs/handbook/type-inference.html
 window.onmousedown  = (event: any) => {
@@ -18,7 +18,7 @@ interface Foo {
 // let foo = {} as Foo
 // foo.bar = 1
 
-let foo: Foo = {
+const foo: Foo = {
   bar: 1
 }
 console.log(foo)

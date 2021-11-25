@@ -17,7 +17,7 @@ console.log(Animal.prototype)
 let animal = new Animal('dog')
 console.log(animal)
 // animal.pri()
-// animal.pro()
+animal.pro()
 console.log(Animal.food)
 
 // 类的继承

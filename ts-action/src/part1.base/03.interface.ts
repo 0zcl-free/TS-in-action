@@ -3,6 +3,8 @@ interface List {
   name: string,
   age?: number
 }
+const a223 = document.getElementById('id')
+a223?.style
 
 interface Result {
   data: List[]
@@ -18,11 +20,12 @@ function render(result: Result) {
   })
 }
 
-let result = {
+const result = {
   data: [
     { id: 1, name: 'A', age: 25 },
     { id: 2, name: 'B' }
-  ]
+  ],
+  a: 1
 }
 
 render(result)

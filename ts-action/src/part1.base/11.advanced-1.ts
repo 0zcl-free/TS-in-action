@@ -8,13 +8,13 @@ interface CatInterface {
 }
 
 // 交叉类型声明
-let pet: DogInterface & CatInterface = {
+const pet: DogInterface & CatInterface = {
   run() {},
   jump() {}
 }
 
 // 联合类型声明
-let a1: number | string = 1
+const a1: number | string = 1
 let b1: 'a' | 'b' | 'c'
 let c1: 1 | 2 | 3
 
@@ -30,7 +30,7 @@ class Catt implements CatInterface {
 
 enum Master { Boy, Girl }
 function getPet(master: Master) {
-  let pet = master === Master.Boy ? new Dogg() : new Catt()
+  const pet = master === Master.Boy ? new Dogg() : new Catt()
   // pet.run()
   pet.eat()  // 类型不确定时，只能取公有成员
   return pet

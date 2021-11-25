@@ -23,7 +23,7 @@ class JavaScript {
 
 // 出错原因：变量lang被认为是一个联合类型，意味着它必须同时具有 helloJava 和 helloJavaScript 两个方法
 function getLanguage(type: Type, x: string | number) {
-  let lang = type === Type.Strong ? new Java('java') : new JavaScript('js')
+  const lang = type === Type.Strong ? new Java('java') : new JavaScript('js')
   console.log('lang', lang)
   // 1、出错了！
   // if (lang.helloJava) {

@@ -5,7 +5,7 @@ X兼容Y : X（目标类型） = Y（源类型）
 */
 
 
-let s: string = 'zcl'
+const s: string = 'zcl'
 // s = null // "strictNullChecks": true。 于在 ts 中， null 是所有类型的子类型
 
 // 接口兼容： 成员少的兼容成员多的
@@ -21,10 +21,10 @@ interface Y {
 }
 
 let x1: X = { a: 1, b: 2 }
-let y: Y = { a: 1, b: 2, c: 3 }
+const y: Y = { a: 1, b: 2, c: 3 }
 
 x1 = y
-// y = x2
+// y = x1
 
 
 // 函数兼容性
@@ -38,13 +38,13 @@ function Foo(handler: Handler) {
   return handler
 }
 
-let h1 = (a: number) => {}
-let h2 = (a: number, b: number, c: number) => {}
+const h1 = (a: number) => {}
+const h2 = (a: number, b: number, c: number) => {}
 Foo(h1)
 // Foo(h2)
 
 // 2> 参数类型：须匹配
-let h3 = (a: string) => {}
+const h3 = (a: string) => {}
 // Foo(h3)
 
 
@@ -59,13 +59,13 @@ interface Point2D {
   y: number;
 }
 let p3d = (point: Point3D) => {}
-let p2d = (point: Point2D) => {}
+const p2d = (point: Point2D) => {}
 p3d = p2d
 // p2d = p3d   // 想要不报错，需要关闭 tsconfig.json 中的一个配置  strictFunctionTypes
 
 // 3> 返回值类型
 let ff = () => ({ name: 'zcl' })
-let gg = () => ({ name: 'abc', age: 25 })
+const gg = () => ({ name: 'abc', age: 25 })
 
 ff = gg
 // gg = ff
@@ -91,10 +91,10 @@ enum Color {
   Red,
   Yellow
 }
-let fruit: Fruit.Banana = 2
-let no: number = Fruit.Apple
-// let color: Color.Red = Fruit.Apple
-console.log(fruit, no)
+const fruit: Fruit.Banana = 2
+const no: number = Fruit.Apple
+// const color: Color.Red = Fruit.Apple
+// console.log(fruit, no, color)
 
 
 class A {
@@ -116,7 +116,8 @@ let aa = new A(1, 2)
 let bb = new B(1)
 // 两个类都含有相同的实例成员 number 类型的id，尽管构造函数不同，依然相互兼容
 // 在上例的基础上各自添加了相同的 私有成员name，就无法兼容了
-// bb = aa
+bb = aa
+console.log(bb)
 // aa = bb
 
 // 就算包含私有成员属性，但是父类和子类的实例可以相互兼容
@@ -128,13 +129,13 @@ cc = aa
 // 泛型兼容性
 interface Empty<T> {}
 let obj1: Empty<number> = {}
-let obj2: Empty<string> = {}
+const obj2: Empty<string> = {}
 obj1 = obj2
 
 let logg = <T>(x: T): T => {
   return x
 }
-let logg2 = <U>(x: U): U => {
+const logg2 = <U>(x: U): U => {
   return x
 }
 logg = logg2

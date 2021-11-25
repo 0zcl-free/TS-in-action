@@ -11,9 +11,10 @@ class Clock implements ClockInterface {
   setTime(d: Date) {
     this.currentTime = d
   }
+  name: string = 'zcl'
 }
 
-let clock: ClockInterface = new Clock()
+const clock: ClockInterface = new Clock()
 console.log(clock)
 
 interface Alarm {

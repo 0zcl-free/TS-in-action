@@ -17,8 +17,9 @@ interface Log<T> {
   (arg: T): T;
 }
 
-let myLog: Log<number> = log;
-// myLog(123)
+const myLog: Log<number> = log;
+const hhh: number = myLog(123)
+console.log('hhh', hhh)
 
 
 // 泛型类：泛型 不能用于类的 静态成员
@@ -28,7 +29,7 @@ class Log2<T> {
     return value
   }
 }
-let log1 = new Log2<number>()
+const log1 = new Log2<number>()
 log1.run(123)
 
 

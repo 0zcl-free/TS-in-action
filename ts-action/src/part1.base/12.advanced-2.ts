@@ -10,7 +10,7 @@ function getValues(obj: any, keys: string[]) {
   return keys.map(key => obj[key])
 }
 
-// console.log(getValues(objj, ['a', 'b']))
+console.log(getValues(objj, ['a', 'b']))
 // [undefined, undefined]  问题：obj中不存的属性，返回 undefined，而没有提示报错
 // console.log(getValues(objj, ['e', 'f']))
 

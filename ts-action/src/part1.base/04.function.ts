@@ -7,11 +7,14 @@ function add1(x: number, y: number) {
 
 // type add3 = (x: number, y: number) => number
 
-// interface add4 {
-//   (x: number, y: number): number
-// }
+interface Add4 {
+  (x: number, y: number): number;
+}
 
-// console.log(add1(1, 2))
+const add44: Add4 = (x: number, y: number) => x+y
+
+
+console.log('add4', add44(1, 2))
 
 
 function add5(x: number, y?: number) {
